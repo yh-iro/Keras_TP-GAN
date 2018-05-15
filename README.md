@@ -78,6 +78,8 @@ After fine-tuning, the trained model scores 0.997 as loss value, 1.000 as valacc
 My training scripts history resulting to the sample pictures on top of this document. Note that it includes try and errors and still updating thus not the best. In this example, I called my python module through Google ml-engine from Windows command prompt.
 
 ```
+cd PATH/TO/Keras_TP-GAN
+
 gcloud ml-engine local train --module-name keras_tpgan.tasks.train_gan --package-path keras_tpgan/ ^
 -- ^
 --out_dir "OUT_DIR/" ^
@@ -106,6 +108,8 @@ gcloud ml-engine local train --module-name keras_tpgan.tasks.train_gan --package
 ```
 
 ```
+cd PATH/TO/Keras_TP-GAN
+
 gcloud ml-engine local train --module-name keras_tpgan.tasks.train_gan --package-path keras_tpgan/ ^
 -- ^
 --out_dir "OUT_DIR/" ^
@@ -137,6 +141,8 @@ gcloud ml-engine local train --module-name keras_tpgan.tasks.train_gan --package
 ```
 
 ```
+cd PATH/TO/Keras_TP-GAN
+
 gcloud ml-engine local train --module-name keras_tpgan.tasks.train_gan --package-path keras_tpgan/ ^
 -- ^
 --out_dir "OUT_DIR/" ^
@@ -167,6 +173,8 @@ gcloud ml-engine local train --module-name keras_tpgan.tasks.train_gan --package
 ```
 
 ```
+cd PATH/TO/Keras_TP-GAN
+
 gcloud ml-engine local train --module-name keras_tpgan.tasks.train_gan --package-path keras_tpgan/ ^
 -- ^
 --out_dir "OUT_DIR/" ^
@@ -197,6 +205,8 @@ gcloud ml-engine local train --module-name keras_tpgan.tasks.train_gan --package
 ```
 
 ```
+cd PATH/TO/Keras_TP-GAN
+
 gcloud ml-engine local train --module-name keras_tpgan.tasks.train_gan --package-path keras_tpgan/ ^
 -- ^
 --out_dir "OUT_DIR/" ^

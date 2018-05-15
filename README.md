@@ -12,15 +12,15 @@ Original paper is
 https://arxiv.org/abs/1704.04086
 
 ## Current results
-Currently, generalization and resolution are not good as the author's results. If you have some idea, I'm very happy if I have a discussion with you. Any comments are welcomed.
+Currently, generalization and resolution are not good as the author's results. If you have some comment about this implementation, please e-mail me. I'm very happy to discuss together.
 
 Input | Synthesized frontal | True frontal
 ----|----|----
-TD1 | TD3 |
-TD2 | TD4 |
-TD2 | TD4 |
-TD2 | TD4 |
-
+![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/x0.png) | ![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/epoch0231_img128_subject229_loss0.949_0.png) | ![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/y0.png)
+![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/x1.png) | ![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/epoch0231_img128_subject211_loss0.949_1.png) | ![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/y1.png)
+![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/x2.png) | ![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/epoch0231_img128_subject165_loss0.949_2.png) | ![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/y2.png)
+![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/x3.png) | ![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/epoch0231_img128_subject178_loss0.949_3.png) | ![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/y3.png)
+The subjects of these 4 images are included in training dataset but illumination are different.
 
 ## Library version
 - Python: 3.6.3

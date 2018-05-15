@@ -1,0 +1,7 @@
+trainingInput:
+  pythonVersion: "3.5"
+  runtimeVersion: "1.7"
+  scaleTier: CUSTOM
+  masterType: complex_model_m_gpu
+  #masterType: standard_gpu
+  

@@ -258,10 +258,10 @@ gcloud ml-engine jobs submit training JOB_ID ^
 --datalist_dir "gs://BUCKET_NAME/apps/TPGAN/datalist/" ^
 --out_dir "OUT_DIR/" ^
 --gpus 4 ^
---lcnn-weights "gs://BUCKET_NAME/FINE-TUNED/Keras_LightCNN/EXTRACTOR/MODEL.hdf5" ^
---generator-weights "gs://BUCKET_NAME/BUCKET_NAME/JOB-DIR/OUT_DIR/weights/generator/WEIGHTS.hdf5" ^
---classifier_weights "gs://BUCKET_NAME/BUCKET_NAME/JOB-DIR/OUT_DIR/weights/classifier/WEIGHTS.hdf5" ^
---discriminator_weights "gs://BUCKET_NAME/BUCKET_NAME/JOB-DIR/OUT_DIR/weights/discriminator/WEIGHTS.hdf5" ^
+--lcnn-weights "gs://BUCKET_NAME/FINE-TUNED/Keras_LightCNN/EXTRACTOR/WEIGHTS.hdf5" ^
+--generator-weights "gs://BUCKET_NAME/JOB-DIR/OUT_DIR/weights/generator/WEIGHTS.hdf5" ^
+--classifier_weights "gs://BUCKET_NAME/JOB-DIR/OUT_DIR/weights/classifier/WEIGHTS.hdf5" ^
+--discriminator_weights "gs://BUCKET_NAME/JOB-DIR/OUT_DIR/weights/discriminator/WEIGHTS.hdf5" ^
 --gen_batch_size 32 ^
 --gen_steps_per_epoch 1000 ^
 --disc_batch_size 64 ^

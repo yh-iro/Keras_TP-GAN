@@ -270,7 +270,6 @@ gcloud ml-engine jobs submit training JOB_ID ^
 --out_period 1 ^
 --optimizer adam ^
 --lr 0.0001 ^
---decay 0 ^
 --beta1 0.9 ^
 --lambda_128 "lambda x: 1" ^
 --lambda_64 "lambda x: 1" ^

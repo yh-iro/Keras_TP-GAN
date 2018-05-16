@@ -253,9 +253,9 @@ gcloud ml-engine jobs submit training JOB_ID ^
 --region asia-east1 ^
 --config "config.yaml" ^
 -- ^
---multipie_dir "gs://BUCKET_NAME/images/" ^
+--multipie_dir "gs://BUCKET_NAME/MULTI-PIE_DIR/" ^
 --landmarks_dict_file "gs://BUCKET_NAME/landmarks.pkl" ^
---datalist_dir "gs://BUCKET_NAME/apps/TPGAN/datalist/" ^
+--datalist_dir "gs://BUCKET_NAME/DATALIST_DIR/" ^
 --out_dir "OUT_DIR/" ^
 --gpus 4 ^
 --lcnn-weights "gs://BUCKET_NAME/FINE-TUNED/Keras_LightCNN/EXTRACTOR/WEIGHTS.hdf5" ^

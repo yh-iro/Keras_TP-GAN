@@ -151,3 +151,8 @@ gcloud ml-engine jobs submit training JOB_ID ^
 --lambda_class "lambda x: 1" ^
 --lambda_parts "lambda x: 3"
 ```
+
+## Downloads
+Trained models (weights files) and result images can be downloaded here.
+
+https://drive.google.com/open?id=1H-F0_CWj-aR6kfTZdS7mLKjgcqMh-1PU

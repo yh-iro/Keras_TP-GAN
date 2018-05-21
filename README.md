@@ -12,14 +12,14 @@ Original paper is
 https://arxiv.org/abs/1704.04086
 
 ## Current results
-Currently, generalization and resolution are not good as the author's results. If you have some comment about this implementation, please e-mail me. I'm very happy to discuss together.
+Currently, generalization is not good as the author's results. If you have some comment about this implementation, please e-mail me. I'm very happy to discuss together.
 
 Input|Synthesized|GT
 ----|----|----
-![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/x0.png)|![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/epoch0231_img128_subject229_loss0.949_0.png)|![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/y0.png)
-![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/x1.png)|![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/epoch0231_img128_subject211_loss0.949_1.png)|![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/y1.png)
-![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/x2.png)|![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/epoch0231_img128_subject165_loss0.949_2.png)|![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/y2.png)
-![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/x3.png)|![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/epoch0231_img128_subject178_loss0.949_3.png)|![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/y3.png)
+![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/x0.png)|![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/epoch0480_img128_subject229_loss0.560_0.png)|![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/y0.png)
+![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/x1.png)|![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/epoch0480_img128_subject211_loss0.560_1.png)|![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/y1.png)
+![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/x2.png)|![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/epoch0480_img128_subject165_loss0.560_2.png)|![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/y2.png)
+![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/x3.png)|![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/epoch0480_img128_subject178_loss0.560_3.png)|![alt text](https://raw.githubusercontent.com/yh-iro/Keras_TP-GAN/master/images/y3.png)
 
 The subjects of these 4 images are included in training dataset but illumination are different.
 
@@ -90,7 +90,7 @@ gcloud ml-engine local train --module-name keras_tpgan.tasks.train_gan --package
 --gen_steps_per_epoch 1000 ^
 --disc_batch_size 16 ^
 --disc_steps_per_epoch 100 ^
---epochs 30 ^
+--epochs 480 ^
 --out_period 3 ^
 --optimizer adam ^
 --lr 0.0001 ^
@@ -106,136 +106,6 @@ gcloud ml-engine local train --module-name keras_tpgan.tasks.train_gan --package
 --lambda_class "lambda x: 1" ^
 --lambda_parts "lambda x: 3" >> OUT_DIR/train.log 2>&1
 ```
-
-```
-cd PATH/TO/Keras_TP-GAN
-
-gcloud ml-engine local train --module-name keras_tpgan.tasks.train_gan --package-path keras_tpgan/ ^
--- ^
---out_dir "OUT_DIR/" ^
---gpus 1 ^
---lcnn-weights "FINE-TUNED/Keras_LightCNN/EXTRACTOR/MODEL.hdf5" ^
---generator-weights "OUT_DIR/weights/generator/epoch0030_loss1.604.hdf5" ^
---classifier_weights "OUT_DIR/weights/classifier/epoch0030_loss1.604.hdf5" ^
---discriminator_weights "OUT_DIR/weights/discriminator/epoch0030_loss0.163.hdf5" ^
---datalist_dir "datalist/" ^
---gen_batch_size 8 ^
---gen_steps_per_epoch 1000 ^
---disc_batch_size 16 ^
---disc_steps_per_epoch 100 ^
---epochs 90 ^
---out_period 3 ^
---optimizer adam ^
---lr 0.0001 ^
---decay 0 ^
---beta1 0.9 ^
---lambda_128 "lambda x: 1" ^
---lambda_64 "lambda x: 1" ^
---lambda_32 "lambda x: 1.5" ^
---lambda_sym "lambda x: 1e-1" ^
---lambda_ip "lambda x: 1e-3" ^
---lambda_adv "lambda x: (5e-3*(1+2*(x/5))) if x<100 else 5e-3*3" ^
---lambda_tv "lambda x: 1e-5" ^
---lambda_class "lambda x: 1" ^
---lambda_parts "lambda x: 3" >> OUT_DIR/train.log 2>&1
-```
-
-```
-cd PATH/TO/Keras_TP-GAN
-
-gcloud ml-engine local train --module-name keras_tpgan.tasks.train_gan --package-path keras_tpgan/ ^
--- ^
---out_dir "OUT_DIR/" ^
---gpus 1 ^
---lcnn-weights "FINE-TUNED/Keras_LightCNN/EXTRACTOR/MODEL.hdf5" ^
---generator-weights "OUT_DIR/weights/generator/epoch0120_loss1.062.hdf5" ^
---classifier_weights "OUT_DIR/weights/classifier/epoch0120_loss1.062.hdf5" ^
---discriminator_weights "OUT_DIR/weights/discriminator/epoch0120_loss0.177.hdf5" ^
---datalist_dir "datalist/" ^
---gen_batch_size 8 ^
---gen_steps_per_epoch 1000 ^
---disc_batch_size 16 ^
---disc_steps_per_epoch 100 ^
---epochs 12 ^
---out_period 3 ^
---optimizer adam ^
---lr 0.0001 ^
---beta1 0.9 ^
---lambda_128 "lambda x: 1" ^
---lambda_64 "lambda x: 1" ^
---lambda_32 "lambda x: 1.5" ^
---lambda_sym "lambda x: 1e-1" ^
---lambda_ip "lambda x: 1e-3" ^
---lambda_adv "lambda x: (1.5e-2*(1+2*(x/50))) if x^<50 else 1.5e-2*3" ^
---lambda_tv "lambda x: 1e-5" ^
---lambda_class "lambda x: 1" ^
---lambda_parts "lambda x: 3" >> OUT_DIR/train180514.log 2>&1
-```
-
-```
-cd PATH/TO/Keras_TP-GAN
-
-gcloud ml-engine local train --module-name keras_tpgan.tasks.train_gan --package-path keras_tpgan/ ^
--- ^
---out_dir "OUT_DIR/" ^
---gpus 1 ^
---lcnn-weights "FINE-TUNED/Keras_LightCNN/EXTRACTOR/MODEL.hdf5" ^
---generator-weights "OUT_DIR/weights/generator/epoch0132_loss1.006.hdf5" ^
---classifier_weights "OUT_DIR/weights/classifier/epoch0132_loss1.006.hdf5" ^
---discriminator_weights "OUT_DIR/weights/discriminator/epoch0132_loss0.288.hdf5" ^
---datalist_dir "datalist/" ^
---gen_batch_size 8 ^
---gen_steps_per_epoch 300 ^
---disc_batch_size 16 ^
---disc_steps_per_epoch 100 ^
---epochs 60 ^
---out_period 3 ^
---optimizer adam ^
---lr 0.0001 ^
---beta1 0.9 ^
---lambda_128 "lambda x: 1" ^
---lambda_64 "lambda x: 1" ^
---lambda_32 "lambda x: 1.5" ^
---lambda_sym "lambda x: 1e-1" ^
---lambda_ip "lambda x: 1e-3" ^
---lambda_adv "lambda x: (2.156e-2*(1+2*(x/50))) if x^<50 else 2.156e-2*3" ^
---lambda_tv "lambda x: 1e-5" ^
---lambda_class "lambda x: 1" ^
---lambda_parts "lambda x: 3" >> OUT_DIR/train180514.log 2>&1
-```
-
-```
-cd PATH/TO/Keras_TP-GAN
-
-gcloud ml-engine local train --module-name keras_tpgan.tasks.train_gan --package-path keras_tpgan/ ^
--- ^
---out_dir "OUT_DIR/" ^
---gpus 1 ^
---lcnn-weights "FINE-TUNED/Keras_LightCNN/EXTRACTOR/MODEL.hdf5" ^
---generator-weights "OUT_DIR/weights/generator/epoch0192_loss0.979.hdf5" ^
---classifier_weights "OUT_DIR/weights/classifier/epoch0192_loss0.979.hdf5" ^
---discriminator_weights "OUT_DIR/weights/discriminator/epoch0192_loss0.234.hdf5" ^
---datalist_dir "datalist/" ^
---gen_batch_size 8 ^
---gen_steps_per_epoch 500 ^
---disc_batch_size 16 ^
---disc_steps_per_epoch 100 ^
---epochs 1000 ^
---out_period 3 ^
---optimizer adam ^
---lr 0.0001 ^
---beta1 0.9 ^
---lambda_128 "lambda x: 1" ^
---lambda_64 "lambda x: 1" ^
---lambda_32 "lambda x: 1.5" ^
---lambda_sym "lambda x: 1e-1" ^
---lambda_ip "lambda x: 1e-3" ^
---lambda_adv "lambda x: 6.5e-2" ^
---lambda_tv "lambda x: (1e-5*(1+9*(x/100))) if x^<100 else 1e-5*10" ^
---lambda_class "lambda x: 1" ^
---lambda_parts "lambda x: 3" >> OUT_DIR/train180514.log 2>&1
-```
-
 
 ## Using Google ML Engine and Storage
 Training environment can easily be switched to [Google Cloud Machine Learning Engine](https://cloud.google.com/ml-engine/).

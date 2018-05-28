@@ -153,6 +153,6 @@ gcloud ml-engine jobs submit training JOB_ID ^
 ```
 
 ## Downloads
-Trained models (weights files) and result images can be downloaded here.
+Trained models (weights files), landmarks.pkl and result images can be downloaded here.
 
 https://drive.google.com/open?id=1H-F0_CWj-aR6kfTZdS7mLKjgcqMh-1PU

@@ -1,6 +1,6 @@
 # Keras_TP-GAN
 
-## Unofficial Keras (with Tensorflow) re-implementation of "Beyond Face Rotation: Global and Local Perception GAN for Photorealistic and Identity Preserving Frontal View Synthesis"
+## Unofficial Keras (with Tensorflow) re-implementation of TP-GAN, "Beyond Face Rotation: Global and Local Perception GAN for Photorealistic and Identity Preserving Frontal View Synthesis"
 Main part of this code is implemented referring to the author's official pure Tensorflow implementation.
 
 https://github.com/HRLTY/TP-GAN

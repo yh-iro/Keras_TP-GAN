@@ -156,3 +156,6 @@ gcloud ml-engine jobs submit training JOB_ID ^
 Trained models (weights files), landmarks.pkl and result images can be downloaded here.
 
 https://drive.google.com/open?id=1H-F0_CWj-aR6kfTZdS7mLKjgcqMh-1PU
+
+## Running synthesis demo using downloaded trained models
+Please see misc/demo.py
